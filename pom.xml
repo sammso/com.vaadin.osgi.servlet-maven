@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--#======================================================================= -->
+<!--# Copyright (c) 2011, 2014 - Lunifera GmbH (Wien, Austria) -->
+<!--# All rights reserved. This program and the accompanying materials -->
+<!--# are made available under the terms of the Eclipse Public License v1.0 -->
+<!--# which accompanies this distribution, and is available at -->
+<!--# http://www.eclipse.org/legal/epl-v10.html -->
+<!--# -->
+<!--# Contributors: -->
+<!--#     Klemens Edler - initial API and implementation -->
+<!--#======================================================================= -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.vaadin.osgi</groupId>
+    <artifactId>com.vaadin.osgi</artifactId>
+    <version>0.5.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>com.vaadin.osgi.servlet.api</module>
+        <module>com.vaadin.osgi.servlet.provider</module>
+
+        <module>com.vaadin.osgi.servlet.example.addressbook</module>
+        <module>com.vaadin.osgi.servlet.example.services.addressbook</module>
+        <module>com.vaadin.osgi.servlet.example.services.api</module>
+        <module>com.vaadin.osgi.servlet.example.services.core</module>
+        <module>com.vaadin.osgi.servlet.example.services.counter</module>
+    </modules>
+
+    <properties>
+        <tycho-version>0.24.0</tycho-version>
+        <tychoExtrasVersion>0.24.0</tychoExtrasVersion>
+        <vaadin.version>7.3.8</vaadin.version>
+     
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>     
+    </properties>
+
+    <developers>
+        <developer>
+            <id>florianpirchner</id>
+            <name>Florian Pirchner</name>
+            <email>florian.pirchner@gmail.com</email>
+            <timezone>+2</timezone>
+        </developer>
+    </developers>
+
+    <profiles>
+    </profiles>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>add-source</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>add-source</goal>
+                            </goals>
+                            <configuration>
+                                <sources>
+                                    <source>src-gen</source>
+                                    <source>xtend-gen</source>
+                                </sources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-compiler-plugin</artifactId>
+                    <version>${tycho-version}</version>
+                    <configuration>
+                        <compilerVersion>1.8</compilerVersion>
+                        <encoding>UTF-8</encoding>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>xtend-gen</directory>
+                            <includes>
+                                <include>**</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
