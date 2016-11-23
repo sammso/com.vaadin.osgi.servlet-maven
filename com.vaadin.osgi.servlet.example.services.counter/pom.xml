@@ -24,7 +24,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.vaadin.osgi</groupId>
-			<artifactId>com.vaadin.osgi.servlet.api</artifactId>
+			<artifactId>com.vaadin.osgi.servlet.example.services.api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

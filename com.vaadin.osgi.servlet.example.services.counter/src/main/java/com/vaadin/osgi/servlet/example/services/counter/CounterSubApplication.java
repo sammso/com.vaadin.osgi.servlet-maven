@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
-import com.vaadin.osgi.example.services.api.ISubApplication;
+import com.vaadin.osgi.servlet.example.services.api.ISubApplication;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;

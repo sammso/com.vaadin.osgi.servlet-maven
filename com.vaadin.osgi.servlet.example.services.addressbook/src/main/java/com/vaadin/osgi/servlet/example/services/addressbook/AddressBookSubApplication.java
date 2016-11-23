@@ -1,9 +1,9 @@
-package com.vaadin.osgi.example.services.addressbook;
+package com.vaadin.osgi.servlet.example.services.addressbook;
 
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
-import com.vaadin.osgi.example.services.api.ISubApplication;
+import com.vaadin.osgi.servlet.example.services.api.ISubApplication;
 import com.vaadin.ui.Label;
 
 @Component(scope = ServiceScope.PROTOTYPE)

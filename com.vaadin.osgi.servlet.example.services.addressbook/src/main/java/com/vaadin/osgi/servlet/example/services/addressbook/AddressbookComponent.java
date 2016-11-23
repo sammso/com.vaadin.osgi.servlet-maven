@@ -1,11 +1,11 @@
-package com.vaadin.osgi.example.services.addressbook;
+package com.vaadin.osgi.servlet.example.services.addressbook;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.osgi.example.services.addressbook.backend.Contact;
-import com.vaadin.osgi.example.services.addressbook.backend.ContactService;
+import com.vaadin.osgi.servlet.example.services.addressbook.backend.Contact;
+import com.vaadin.osgi.servlet.example.services.addressbook.backend.ContactService;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Grid;

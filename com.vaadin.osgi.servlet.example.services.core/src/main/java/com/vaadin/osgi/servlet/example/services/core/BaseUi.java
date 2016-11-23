@@ -26,7 +26,7 @@ import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.service.component.annotations.ServiceScope;
 
 import com.vaadin.annotations.Push;
-import com.vaadin.osgi.example.services.api.ISubApplication;
+import com.vaadin.osgi.servlet.example.services.api.ISubApplication;
 import com.vaadin.osgi.servlet.api.Constants;
 import com.vaadin.osgi.servlet.api.RequireVaadinOSGiServletProvider;
 import com.vaadin.server.VaadinRequest;

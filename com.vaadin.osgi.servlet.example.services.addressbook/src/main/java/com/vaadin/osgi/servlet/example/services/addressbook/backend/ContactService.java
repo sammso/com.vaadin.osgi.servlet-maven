@@ -1,4 +1,4 @@
-package com.vaadin.osgi.example.services.addressbook.backend;
+package com.vaadin.osgi.servlet.example.services.addressbook.backend;
 
 import java.util.ArrayList;
 import java.util.Calendar;
