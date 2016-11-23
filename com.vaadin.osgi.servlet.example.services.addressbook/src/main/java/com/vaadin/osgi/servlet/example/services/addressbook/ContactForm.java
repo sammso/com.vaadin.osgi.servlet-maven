@@ -21,6 +21,7 @@ import com.vaadin.ui.themes.ValoTheme;
  * Similarly named field by naming convention or customized
  * with @PropertyId annotation.
  */
+@SuppressWarnings("serial")
 public class ContactForm extends FormLayout {
 
 	final AddressbookComponent parent;

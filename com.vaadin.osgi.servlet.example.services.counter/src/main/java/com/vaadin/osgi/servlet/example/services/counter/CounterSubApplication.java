@@ -10,6 +10,7 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 
+@SuppressWarnings("serial")
 @Component(scope=ServiceScope.PROTOTYPE)
 public class CounterSubApplication extends CustomComponent implements ISubApplication {
 

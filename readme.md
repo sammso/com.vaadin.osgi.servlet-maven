@@ -1,8 +1,6 @@
-# 
+# com.vaadin.osgi
 
-These bundles offer a Vaadin OSGi R6 brige based on OSGi prototype scope. It it heavily based on Configuration Manager. Configurations can easily done by Apache felix webconsole.
+Currently 2 different implementations are available. Select the proper documentation for you needs below.
 
-## Example
-
-## References
-
+1. Servlets - [Generic servlet implementation - readme-servlet.md](https://github.com/vaadin-osgi/vaadin-addons/blob/master/com.vaadin.osgi/readme-servlet.md "Generic servlet implementation") 
+2. Liferay-Portlets - [Liferay portlet implementation - readme-portlet-liferay.md](https://github.com/vaadin-osgi/vaadin-addons/blob/master/com.vaadin.osgi/readme-portlet-liferay.md "Liferay portlet implementation")

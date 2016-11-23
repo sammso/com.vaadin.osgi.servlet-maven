@@ -61,7 +61,8 @@ public class ContactService {
     private HashMap<Long, Contact> contacts = new HashMap<>();
     private long nextId = 0;
 
-    public synchronized List<Contact> findAll(String stringFilter) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public synchronized List<Contact> findAll(String stringFilter) {
         ArrayList arrayList = new ArrayList();
         for (Contact contact : contacts.values()) {
             try {
@@ -77,7 +78,6 @@ public class ContactService {
             }
         }
         Collections.sort(arrayList, new Comparator<Contact>() {
-
             @Override
             public int compare(Contact o1, Contact o2) {
                 return (int) (o2.getId() - o1.getId());
