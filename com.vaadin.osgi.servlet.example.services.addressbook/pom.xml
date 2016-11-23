@@ -88,6 +88,24 @@
 					<useDefaultManifestFile>true</useDefaultManifestFile>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-export-maven-plugin</artifactId>
+                <version>${bnd.version}</version>
+                <configuration>
+                    <bndruns>
+                        <bndrun>start-all.bndrun</bndrun>
+                    </bndruns>
+                    <targetDir>.</targetDir>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>export</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
