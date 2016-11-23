@@ -3,3 +3,5 @@ Bundle-Description: \
 
 Bundle-Version: 1.0.0.${tstamp}
 Export-Package: com.vaadin.osgi.servlet.example.services.api
+
+-sources: 			true

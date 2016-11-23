@@ -14,3 +14,5 @@ Private-Package: \
 	com.vaadin.osgi.common
 
 Bundle-Version: 1.0.0.${tstamp}
+
+-sources: 			true

@@ -9,4 +9,4 @@ Private-Package:  \
 	com.vaadin.osgi.example.addressbook
 	
 Bundle-Version: 1.0.0.${tstamp}
-
+-sources: 			true
