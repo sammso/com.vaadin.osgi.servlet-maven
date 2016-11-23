@@ -24,78 +24,72 @@
 		<relativePath>..</relativePath>
 	</parent>
 
-	<groupId>com.vaadin.osgi</groupId>
 	<artifactId>com.vaadin.osgi.servlet.example.services.counter</artifactId>
-	<packaging>bundle</packaging>
 
 	<dependencies>
-		
+		<dependency>
+			<groupId>com.vaadin.osgi</groupId>
+			<artifactId>com.vaadin.osgi.servlet.api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-server</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.service.component</artifactId>
+			<version>${org.osgi.service.component.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.service.component.annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.namespace.implementation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>biz.aQute.bnd</groupId>
+			<artifactId>biz.aQute.bnd.annotation</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<finalName>${project.artifactId}.${project.version}</finalName>
 
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Bundle-Name>OSGi for Vaadin: Servlet Example - Counter service</Bundle-Name>
-						<Bundle-SymbolicName>com.vaadin.osgi.servlet.example.services.counter</Bundle-SymbolicName>
-                        <Bundle-Version>0.5.0.{osgi-version-qualifier}</Bundle-Version>
-						<Require-Bundle>
-						</Require-Bundle>
-						<Import-Package>
-							com.vaadin.*;version="[7.5.7,7.7.0)",
-							*
-						</Import-Package>
-						<Export-Package>
-							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,
-							!VAADIN.*,
-							com.vaadin.osgi.*;version="0.5.0"
-						</Export-Package>
-						<Include-Resource>{maven-resources}</Include-Resource>
-						<_nouses>true</_nouses>
-					</instructions>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>attach-sources</id>
 						<goals>
-							<goal>jar</goal>
+							<goal>bnd-process</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<useDefaultManifestFile>true</useDefaultManifestFile>
+				</configuration>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
-
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
@@ -114,29 +108,10 @@
 											maven-dependency-plugin
 										</artifactId>
 										<versionRange>
-											[2.0.0,)
+											[2.10,)
 										</versionRange>
 										<goals>
-											<goal>
-												copy-dependencies
-											</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.vaadin</groupId>
-										<artifactId>
-											vaadin-maven-plugin
-										</artifactId>
-										<versionRange>
-											[7.0-SNAPSHOT,)
-										</versionRange>
-										<goals>
-											<goal>compile</goal>
+											<goal>unpack</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>
@@ -149,14 +124,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<!-- This is needed for the sources required by the client-side compiler 
-			to be included in the produced JARs -->
-		<resources>
-			<resource>
-				<directory>src</directory>
-			</resource>
-		</resources>
-
 	</build>
-
 </project>
